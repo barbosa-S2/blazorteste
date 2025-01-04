@@ -1,0 +1,160 @@
+﻿@page "/todo" 
+@rendermode InteractiveServer
+@inject BlazorApp1.Services.UserActionService UserActionService
+
+<style>
+    /* Contêiner principal com layout flex */
+    .container {
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem; /* Espaço entre as duas colunas */
+        padding: 2rem;
+    }
+
+    /* Estilos para a lista de tarefas */
+    .todo-list {
+        flex: 1; /* Ocupa a maior parte da tela */
+        border-right: 1px solid #ccc;
+        padding-right: 2rem;
+    }
+
+    /* Estilos para a seção de ações */
+    .action-log {
+        flex: 0 0 300px; /* Tamanho fixo para a seção de ações */
+        padding-left: 2rem;
+        height: 400px; /* Altura fixa */
+        overflow-y: auto; /* Habilita rolagem vertical */
+        border-left: 1px solid #ccc;
+        padding-top: 10px;
+    }
+
+    /* Estilos para os itens de tarefa */
+    .todo-list ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .todo-list li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    /* Estilo para os botões de ação (Excluir e Concluir) */
+    .action-buttons {
+        display: flex;
+        flex-direction: row; /* Alinha os botões um ao lado do outro */
+        gap: 10px; /* Espaço entre os botões */
+    }
+
+    .todo-list button {
+        padding: 5px 10px;
+        margin-top: 5px;
+    }
+
+    /* Estilo para o campo de adicionar tarefa */
+    .add-todo {
+        margin-top: 20px;
+    }
+
+    .add-todo input {
+        padding: 5px;
+        margin-right: 10px;
+    }
+
+    .add-todo button {
+        padding: 5px 10px;
+    }
+
+    /* Estilos para a seção de ações */
+    .action-log h4 {
+        margin-top: 0;
+    }
+
+    .action-log ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .action-log li {
+        margin-bottom: 10px;
+    }
+</style>
+
+
+<div class="container">
+    <div class="todo-list">
+        <h3>Tarefas (@todos.Count(todo => !todo.IsDone))</h3>
+
+        <ul>
+            @foreach (var todo in todos)
+            {
+                <li>
+                    <span style="@(todo.IsDone ? "text-decoration: line-through;" : "")">
+                        @todo.Title
+                    </span>
+
+                    <!-- Botões de ação -->
+                    <div class="action-buttons">
+                        <button @onclick="() => DeleteTodo(todo)">Excluir</button>
+                        <button @onclick="() => MarkAsDone(todo)" disabled="@todo.IsDone">Concluído</button>
+                    </div>
+                </li>
+            }
+        </ul>
+
+        <div class="add-todo">
+            <input @bind="newTodo" />
+            <button @onclick="AddTodo">Adicionar</button>
+        </div>
+    </div>
+
+    <div class="action-log">
+        <h4>Ações Recentes</h4>
+        <ul>
+            @foreach (var action in actions)
+            {
+                <li>@action</li>
+            }
+        </ul>
+    </div>
+</div>
+
+@code{
+    private List<TodoItem> todos = new();
+    private List<string> actions = new();
+    private string newTodo = "";
+
+    void AddTodo()
+    {
+        if (!string.IsNullOrWhiteSpace(newTodo))
+        {
+            var todo = new TodoItem { Title = newTodo };
+            todos.Add(todo);
+            UserActionService.LogAction($"Usuário adicionou a tarefa: {todo.Title}");
+            actions = UserActionService.GetActions();
+            newTodo = string.Empty; // Limpar campo após adicionar
+        }
+    }
+
+    void DeleteTodo(TodoItem todo)
+    {
+        if (todos.Contains(todo))
+        {
+            todos.Remove(todo);
+            UserActionService.LogAction($"Usuário excluiu a tarefa: {todo.Title}");
+            actions = UserActionService.GetActions();
+        }
+    }
+
+    void MarkAsDone(TodoItem todo)
+    {
+        if (!todo.IsDone)
+        {
+            todo.IsDone = true;
+            UserActionService.LogAction($"Usuário marcou como concluída a tarefa: {todo.Title}");
+            actions = UserActionService.GetActions();
+        }
+    }
+}

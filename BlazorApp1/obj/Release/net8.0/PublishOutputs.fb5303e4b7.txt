@@ -1,0 +1,7 @@
+C:\Users\Elaine Cristina\OneDrive\Área de Trabalho\.vscode\blazorteste01\BlazorApp1\bin\Release\net8.0\publish\BlazorApp1.exe
+C:\Users\Elaine Cristina\OneDrive\Área de Trabalho\.vscode\blazorteste01\BlazorApp1\bin\Release\net8.0\publish\appsettings.Development.json
+C:\Users\Elaine Cristina\OneDrive\Área de Trabalho\.vscode\blazorteste01\BlazorApp1\bin\Release\net8.0\publish\appsettings.json
+C:\Users\Elaine Cristina\OneDrive\Área de Trabalho\.vscode\blazorteste01\BlazorApp1\bin\Release\net8.0\publish\BlazorApp1.dll
+C:\Users\Elaine Cristina\OneDrive\Área de Trabalho\.vscode\blazorteste01\BlazorApp1\bin\Release\net8.0\publish\BlazorApp1.deps.json
+C:\Users\Elaine Cristina\OneDrive\Área de Trabalho\.vscode\blazorteste01\BlazorApp1\bin\Release\net8.0\publish\BlazorApp1.runtimeconfig.json
+C:\Users\Elaine Cristina\OneDrive\Área de Trabalho\.vscode\blazorteste01\BlazorApp1\bin\Release\net8.0\publish\BlazorApp1.pdb
