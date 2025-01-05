@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Elaine Cristina\\OneDrive\\Área de Trabalho\\.vscode\\blazorteste01\\BlazorApp1\\BlazorApp1.csproj": {}
+    "C:\\Users\\Elaine Cristina\\OneDrive\\Área de Trabalho\\.vscode\\blazorteste01\\BlazorApp1\\BlazorApp1.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Elaine Cristina\\OneDrive\\Área de Trabalho\\.vscode\\blazorteste01\\BlazorApp1\\BlazorApp1.csproj": {
+    "C:\\Users\\Elaine Cristina\\OneDrive\\Área de Trabalho\\.vscode\\blazorteste01\\BlazorApp1\\BlazorApp1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Elaine Cristina\\OneDrive\\Área de Trabalho\\.vscode\\blazorteste01\\BlazorApp1\\BlazorApp1.csproj",
+        "projectUniqueName": "C:\\Users\\Elaine Cristina\\OneDrive\\Área de Trabalho\\.vscode\\blazorteste01\\BlazorApp1\\BlazorApp1.csproj",
         "projectName": "BlazorApp1",
-        "projectPath": "c:\\Users\\Elaine Cristina\\OneDrive\\Área de Trabalho\\.vscode\\blazorteste01\\BlazorApp1\\BlazorApp1.csproj",
+        "projectPath": "C:\\Users\\Elaine Cristina\\OneDrive\\Área de Trabalho\\.vscode\\blazorteste01\\BlazorApp1\\BlazorApp1.csproj",
         "packagesPath": "C:\\Users\\Elaine Cristina\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Elaine Cristina\\OneDrive\\Área de Trabalho\\.vscode\\blazorteste01\\BlazorApp1\\obj\\",
+        "outputPath": "C:\\Users\\Elaine Cristina\\OneDrive\\Área de Trabalho\\.vscode\\blazorteste01\\BlazorApp1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Elaine Cristina\\AppData\\Roaming\\NuGet\\NuGet.Config"
